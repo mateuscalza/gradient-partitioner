@@ -1,6 +1,7 @@
 import fs from 'fs-extra'
 
-// to delete existing built bundle with windows environment
+/* eslint-disable no-console */
+
 function emptyDist() {
   return Promise.all([
     new Promise((resolve, reject) => {
