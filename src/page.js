@@ -1,4 +1,4 @@
-import GradientPartitioner from './gradient'
+import GradientPartitioner from './index'
 
 function mount() {
   const range = new GradientPartitioner('#F05F57', '#360940', 0, 100)

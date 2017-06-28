@@ -1,23 +1,39 @@
-require('extract-text-webpack-plugin')
+const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpackSettings = require('./webpack.config')
 
-const optimizingPlugins = [
-  new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('production'),
-  }),
-  new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.optimize.UglifyJsPlugin(),
-  new HtmlWebpackPlugin({
-    template: './views/index.ejs',
-    inject: false,
-  }),
-]
-
-webpackSettings.plugins = optimizingPlugins
-webpackSettings.entry = webpackSettings.entry.filter((entryName) => {
-  return (entryName.indexOf('hot/dev-server') === -1)
-})
-
-module.exports = webpackSettings
+module.exports = {
+  entry: path.resolve('./src/index.js'),
+  devtool: 'source-map',
+  output: {
+    path: path.resolve('./dist'),
+    library: 'gradient-partitioner',
+    libraryTarget: 'umd',
+    filename: 'index.js',
+    umdNamedDefine: true,
+  },
+  resolve: {
+    root: path.resolve('./src'),
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.js'],
+  },
+  module: {
+    loaders: [
+      {
+        test: [/\.js?$/],
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015'],
+        },
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw',
+      },
+    ],
+  },
+  plugins: [
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+  ],
+}

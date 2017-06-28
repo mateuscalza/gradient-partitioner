@@ -18,9 +18,9 @@ range.partition(0, 45).cssGradient() // linear-gradient(to right, rgb(240, 95, 8
 ![Example](https://raw.githubusercontent.com/mateuscalza/gradient-partitioner/master/static/screenshot.png)
 
 ## To Do
+* Serialize to legacy browsers
 * 2d gradient with angle
 * Radial gradients
-* Serialize to legacy browsers
 * Multiple colors
 
 ## License

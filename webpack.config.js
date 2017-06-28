@@ -9,10 +9,10 @@ module.exports = {
   entry: [
     'babel-polyfill',
     'webpack/hot/dev-server',
-    './src',
+    './src/page.js',
   ],
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve('./build'),
     filename: 'bundle.js',
   },
   resolve: {
