@@ -1,7 +1,7 @@
 {
   "name": "gradient-partitioner",
   "description": "Awesome layouts with gradient partitioner.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "engines": {
     "node": ">=0.4.5"

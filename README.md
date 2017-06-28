@@ -2,15 +2,30 @@
 A simple library to slice gradients for node and browser.
 
 ## Install
+NPM
 ```
 npm install --save gradient-partitioner
 ```
 
+Yarn
+```
+yarn add gradient-partitioner
+```
+
 ## Usage
+ES6
 ```javascript
 import GradientPartitioner from 'gradient-partitioner'
 
 const range = new GradientPartitioner('#F05F57', '#360940', 0, 100)
+range.partition(0, 45).cssGradient() // linear-gradient(to right, rgb(240, 95, 85), rgb(156, 56, 77))
+```
+
+Legacy
+```javascript
+var GradientPartitioner = require('gradient-partitioner')
+
+var range = new GradientPartitioner('#F05F57', '#360940', 0, 100)
 range.partition(0, 45).cssGradient() // linear-gradient(to right, rgb(240, 95, 85), rgb(156, 56, 77))
 ```
 
