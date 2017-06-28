@@ -1,5 +1,5 @@
-# Gradient Partitioner [under development]
-A simple library to slice gradient for node and browser.
+# Gradient Partitioner
+A simple library to slice gradients for node and browser.
 
 ## Install
 ```
