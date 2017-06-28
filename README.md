@@ -14,10 +14,14 @@ const range = new GradientPartitioner('#F05F57', '#360940', 0, 100)
 range.partition(0, 45).cssGradient() // linear-gradient(to right, rgb(240, 95, 85), rgb(156, 56, 77))
 ```
 
+### Example
+![Example](https://raw.githubusercontent.com/mateuscalza/gradient-partitioner/master/static/screenshot.png)
+
 ## To Do
 * 2d gradient with angle
 * Radial gradients
 * Serialize to legacy browsers
+* Multiple colors
 
 ## License
 ```
