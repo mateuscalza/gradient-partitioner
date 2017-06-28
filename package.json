@@ -1,7 +1,7 @@
 {
   "name": "gradient-partitioner",
   "description": "Awesome layouts with gradient partitioner.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "engines": {
     "node": ">=0.4.5"
@@ -10,7 +10,8 @@
     "build": "babel-node ./scripts/emptyFolder && webpack --config ./webpack.prod.config.js",
     "dev": "webpack-dev-server --content-base src/index --hot --host 0.0.0.0 --config ./webpack.config.js",
     "watch": "webpack --progress --colors --watch --config ./webpack.config.js",
-    "test": "karma start --reporters html"
+    "test": "karma start --reporters html",
+    "prepublish": "npm run build"
   },
   "contributors": [{
     "name": "Mateus Calza <cto@prix.tech>"
